@@ -1,0 +1,1011 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Econometría Avanzada},
+  pdfauthor={Presentado por: Giovany Astroz y Javier leal},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{Econometría Avanzada}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{Primer Examen Parcial}
+\author{Presentado por: Giovany Astroz y Javier leal}
+\date{12 marzo 2021}
+
+\begin{document}
+\maketitle
+
+\hypertarget{estimaciuxf3n-de-la-demanda-de-cerveza}{%
+\section{1. Estimación de la demanda de
+cerveza}\label{estimaciuxf3n-de-la-demanda-de-cerveza}}
+
+\hypertarget{anuxe1lisis-de-regresiuxf3n}{%
+\subsection{1.1. Análisis de
+regresión}\label{anuxe1lisis-de-regresiuxf3n}}
+
+\hypertarget{a.-cree-una-nueva-variable-llamada-marca-que-contenga-la-marca-de-cada-upc-de-cerveza-por-ejemplo-heineken.}{%
+\subsubsection{a. Cree una nueva variable llamada ``marca'' que contenga
+la marca de cada UPC de cerveza (por ejemplo,
+Heineken).}\label{a.-cree-una-nueva-variable-llamada-marca-que-contenga-la-marca-de-cada-upc-de-cerveza-por-ejemplo-heineken.}}
+
+Al analizar la base de datos se encontró que la marca de cada UPC está
+contenida dentro de la variable \emph{descrip}, sin embargo, dentro de
+esta variable también se encuentran características adicionales que
+hacen referencia principalmente a la variedad, presentación y contenido.
+Ahora bien, estas especificaciones adicionales se encuentran siempre
+luego de la marca, razón por la cual se decidió que una primera
+aproximación para encontrar coincidencias sería extraer la primera
+palabra de la descripción de cada UPC. Siguiendo esta aproximación se
+encuentra que existen 172 palabras diferentes que clasifican \emph{a
+priori} las 787 observaciones de la base de datos.
+
+Claramente, este acercamiento no proporciona una clasificación perfecta,
+pues existen marcas distintas que empiezan por la misma palabra. Por lo
+tanto, se realizó una verificación manual para identificar las marcas
+cuyos UPC eran correctamente agrupados bajo este criterio y las que no.
+Durante este proceso se encontraron más problemas con los datos que se
+mencionarán más adelante.
+
+Luego de reconocer todos las limitaciones y correcciones que se debían
+hacer, se creó la variable \emph{marca} de la siguiente manera:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Se crea la variable \emph{marca} extrayendo la primera palabra de la
+  variable \emph{descrip}. Aunque identificar la marca por la primera
+  palabra no es suficiente en muchos casos, sí es una buena aproximación
+  inicial.
+\item
+  Se diferencian las marcas que coinciden en la primera palabra. Por
+  ejemplo, bajo la palabra ``SAMUEL'' quedaban agrupadas dos marcas
+  diferentes: Samuel Smith y Samuel Adams.
+\item
+  Se unifican bajo el mismo nombre marcas que inicialmente quedaron
+  separadas por omisión de caracteres especiales, abreviaturas o errores
+  tipográficos en el nombre. Por ejemplo, la marca Murphy's Irish Stout
+  se encontraba escrita con y sin apóstrofo: ``MURPHY`S'' y ``MURPHYS'';
+  la marca Leinenkugel se escribía también bajo la abreviatura
+  ``LEINNKGL'' y la marca Guinness se encontraba incorrectamente escrita
+  como ``GUINESS''.
+\item
+  Se cambia la primera palabra por el nombre completo para todas las
+  marcas con al menos dos observaciones y para aquellas con una sola
+  observación en que se consideró necesario. Por ejemplo, se sustituye
+  la palabra ``SIERRA'' por ``SIERRA NEVADA''. Si bien es cierto que
+  estas marcas ya se encontraban correctamente identificadas, se
+  prefirió poner el nombre completo para tener una base de datos más
+  robusta.
+\item
+  Se eliminan de la base de datos los UPC que corresponden a marcas que
+  no son de cerveza (vinos, sidra, bebidas sustitutas). Por ejemplo, se
+  identifica que las variedades de la marca Sante (hardonnay, white,
+  cabernet) corresponden a diferentes tipos de vino, y que la marca Hard
+  Core produce sidra, una bebida alcohólica producto de la fermentación
+  de la manzana. Específicante, se eliminaron de la base los UPC
+  asociados a las marcas Sante, Ariel, Sutter Home, St Regis, Hard Core,
+  Hornsby's, Santa, Zima, Woodchuck y Woodpecker.
+\item
+  En concordancia con el punto 1.1.c., se eliminan aquellos UPC para los
+  cuales no es posible inferir la marca y además, aun ignorando el hecho
+  de que no se conocía la marca, tampoco se podía determinar su
+  ``nacionalidad''. Por ejemplo, la descripción para el UPC 1820000875
+  es simplemente ``WINTER BREW'', la cual hace referencia a una variedad
+  de cerveza que es común en varias marcas. A modo de ilustración, esta
+  prodría pertenecer a la marca Pete's Wicked (americana) o a Fuller's
+  (inglesa). Dado lo anterior, como tampocó se podía definir si se
+  trataba de una cerveza nacional o importada se decidió eliminar esta
+  observación. Así mismo, se eliminaron las observaciones con las
+  descripciones ``WIT'', ``BEER LIMIT'', ``BEERS OF THE WORLD'' y ``OS
+  CLASSIC'', las cuales no aportaban información suficiente para
+  contruir las variables \emph{importada} y \emph{artesanal}.
+\end{enumerate}
+
+Es conveniente mencionar que existian casos que aplicaban a más de una
+de las correcciones indicadas en los pasos 2, 3 y 4. Por ejemplo, bajo
+la palabra ``SAM'' se encontraban dos marcas diferentes: Sam Smith y Sam
+Adams (paso 2); precisamente, ``SAM SMITH'' y ``SAM ADAMS''
+correspondían a la abreviatura de Samuel Smith y Samuel Adams (paso 3);
+y finalmente, las marcas señalas contaban con nombres de dos palabras
+(paso 4). En estos casos, la corrección se realizó en un solo paso y se
+puede encontrar en cualquiera de estos.
+
+Por otro lado, habían marcas con nombres diferentes pero pertenecientes
+a la misma empresa en donde no era muy claro si debian tomarse como una
+sola o no. Por ejemplo, las marcas Ice Draft Light y Bud Ice son
+propiedad al igual que Budweiser de la multinacional Anheuser-Busch
+InBev. A pesar de que las dos primeras compartían elementos de
+identificación y construcción de marca con Budweiser (el vocablo Bud y
+la referencia a Budweiser en la presentación del producto) se decidió
+dejarlas como marcas diferentes. Para cada caso similar se tomó la
+decisión de agrupar marcas o no con base en las estrategias de marketing
+de las empresas y las diferencias en los productos mismos.
+
+Finalmente, la base \emph{beer} contiene la nueva variable \emph{marca}
+con todas las correciones mencionadas anteriormente, donde ahora se
+tienen 753 observaciones y 150 marcas diferentes de cerveza.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ls}\NormalTok{()}
+\FunctionTok{remove}\NormalTok{(}\AttributeTok{list =} \FunctionTok{ls}\NormalTok{())}
+
+\CommentTok{\# Cargando paquetes}
+\FunctionTok{library}\NormalTok{(readr)}
+\FunctionTok{library}\NormalTok{(rmarkdown)}
+\FunctionTok{library}\NormalTok{(tidyverse)}
+\FunctionTok{library}\NormalTok{(stringr)}
+\FunctionTok{library}\NormalTok{(tibble)}
+\FunctionTok{library}\NormalTok{(dplyr)}
+\FunctionTok{library}\NormalTok{(tokenizers)}
+\FunctionTok{library}\NormalTok{(writexl)}
+\FunctionTok{library}\NormalTok{(expss)}
+\FunctionTok{library}\NormalTok{(ggplot2)}
+\FunctionTok{library}\NormalTok{(stargazer)}
+
+
+
+\CommentTok{\# Definiendo directorio de trabajo}
+\FunctionTok{setwd}\NormalTok{(}\StringTok{"\textasciitilde{}/Documents/Maestria/Primer semestre/Econometría Avanzada/Parcial 1"}\NormalTok{)}
+
+\CommentTok{\# Cargando la base de datos}
+\NormalTok{beer }\OtherTok{\textless{}{-}} \FunctionTok{read\_csv}\NormalTok{(}\StringTok{"beer.csv"}\NormalTok{)}
+
+\CommentTok{\# Primera aproximación de clasificación utilizando la primera palabra de "descrip"}
+
+\NormalTok{prim\_palabra\_descrip }\OtherTok{\textless{}{-}} \FunctionTok{word}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{descrip, }\DecValTok{1}\NormalTok{)}
+\NormalTok{frec\_prim\_palabra }\OtherTok{\textless{}{-}} \FunctionTok{sort}\NormalTok{(}\FunctionTok{table}\NormalTok{(prim\_palabra\_descrip), }\AttributeTok{decreasing=}\NormalTok{T)}
+\FunctionTok{head}\NormalTok{(frec\_prim\_palabra, }\DecValTok{10}\NormalTok{)}
+
+\CommentTok{\#{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}\#}
+\CommentTok{\#  Creando la variable *marca*  \#}
+\CommentTok{\#{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}\#}
+
+\CommentTok{\# 1. Extraer la primera palabra de la variable "descrip"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca }\OtherTok{\textless{}{-}} \FunctionTok{word}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{descrip, }\DecValTok{1}\NormalTok{)}
+
+\CommentTok{\# Correcciones:}
+
+\CommentTok{\# 2. Marcas distintas que coinciden en la primera palabra}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{descrip, }\StringTok{"\^{}OLD STYLE"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"OLD STYLE"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{descrip, }\StringTok{"\^{}OLD MILWAUKEE"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"OLD MILWAUKEE"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{descrip, }\StringTok{"\^{}OLD ENGLISH"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"OLD ENGLISH"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{descrip, }\StringTok{"\^{}SAMUEL SMITH"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"SAMUEL SMITH"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{descrip, }\StringTok{"\^{}SAMUEL ADAMS"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"SAMUEL ADAMS"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{descrip, }\StringTok{"\^{}SAM SMITH"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"SAMUEL SMITH"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{descrip, }\StringTok{"\^{}SAM ADAMS"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"SAMUEL ADAMS"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{descrip, }\StringTok{"\^{}ST REGIS"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"ST REGIS"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{descrip, }\StringTok{"\^{}ST PAULI"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"ST PAULI GIRL"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{descrip, }\StringTok{"\^{}BLUE MOON"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"BLUE MOON"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{descrip, }\StringTok{"\^{}BLUE RIDGE"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"BLUE RIDGE"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{descrip, }\StringTok{"\^{}RED WOLF"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"RED WOLF"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{descrip, }\StringTok{"\^{}RED DOG"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"RED DOG"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{descrip, }\StringTok{"\^{}RED STRIPE"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"RED STRIPE"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{descrip, }\StringTok{"\^{}RED HOOK"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"RED HOOK"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{descrip, }\StringTok{"\^{}RED RIVER"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"RED RIVER"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{descrip, }\StringTok{"\^{}BEER LIMIT"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"BEER LIMIT"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{descrip, }\StringTok{"\^{}BEER OF AMERICA"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"BEER OF AMERICA"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{descrip, }\StringTok{"\^{}BEERS OF THE"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"BEERS OF THE WORLD"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{descrip, }\StringTok{"\^{}BIG BEAR"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"BIG BEAR"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{descrip, }\StringTok{"\^{}BIG SHOULDERS"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"BIG SHOULDERS"}
+
+\CommentTok{\# 3. Misma marca con nombres diferentes}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{marca, }\StringTok{"\^{}PETES$"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"PETE\textquotesingle{}S WICKED"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{marca, }\StringTok{"\^{}PETE\textquotesingle{}S$"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"PETE\textquotesingle{}S WICKED"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{marca, }\StringTok{"\^{}MURPHYS$"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"MURPHY\textquotesingle{}S IRISH"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{marca, }\StringTok{"\^{}MURPHY\textquotesingle{}S$"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"MURPHY\textquotesingle{}S IRISH"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{marca, }\StringTok{"\^{}FOSTERS$"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"FOSTER\textquotesingle{}S LAGER"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{marca, }\StringTok{"\^{}FOSTER\textquotesingle{}S$"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"FOSTER\textquotesingle{}S LAGER"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{marca, }\StringTok{"\^{}GUINESS$"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"GUINNESS STOUT"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{marca, }\StringTok{"\^{}GUINNESS$"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"GUINNESS STOUT"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{marca, }\StringTok{"\^{}BECKS$"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"BECK\textquotesingle{}S"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{marca, }\StringTok{"\^{}HACKER{-}PSCHORR$"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"HACKER PSCHORR"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{marca, }\StringTok{"\^{}PSCHORR$"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"HACKER PSCHORR"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{marca, }\StringTok{"\^{}STROHS$"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"STROH\textquotesingle{}S"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{marca, }\StringTok{"\^{}FOSTERS$"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"FOSTER\textquotesingle{}S"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{marca, }\StringTok{"\^{}LEINNKGL$"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"LEINENKUGEL"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{marca, }\StringTok{"\^{}LABATT$"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"LABATTS"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{marca, }\StringTok{"\^{}MICHEAL$"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"MICHAEL SHEA\textquotesingle{}S"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{marca, }\StringTok{"\^{}MICHAEL$"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"MICHAEL SHEA\textquotesingle{}S"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{marca, }\StringTok{"\^{}SHARPS$"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"MILLER"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{marca, }\StringTok{"\^{}CORONITA$"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"CORONA"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{marca, }\StringTok{"\^{}CHICAGO\textquotesingle{}S$"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"LEGACY"}
+
+\CommentTok{\# 4. Marcas con nombres de más de una palabra}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{marca, }\StringTok{"\^{}SPECIAL$"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"SPECIAL EXPORT"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{marca, }\StringTok{"\^{}GOOSE$"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"GOOSE ISLAND"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{marca, }\StringTok{"\^{}MILWAUKEE\textquotesingle{}S$"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"MILWAUKEE\textquotesingle{}S BEST"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{marca, }\StringTok{"\^{}CARLINGS$"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"CARLING BLACK LABEL"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{marca, }\StringTok{"\^{}DOS$"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"DOS EQUIS"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{marca, }\StringTok{"\^{}NEW$"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"NEW AMSTERDAM"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{marca, }\StringTok{"\^{}ROLLING$"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"ROLLING ROCK"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{marca, }\StringTok{"\^{}BLACK$"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"BLACK DOG"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{marca, }\StringTok{"\^{}CARTA$"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"CARTA BLANCA"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{marca, }\StringTok{"\^{}MEISTER$"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"MEISTER BRAU"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{marca, }\StringTok{"\^{}NAKED$"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"NAKED ASPEN"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{marca, }\StringTok{"\^{}RHINO$"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"RHINO CHASERS"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{marca, }\StringTok{"\^{}SIERRA$"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"SIERRA NEVADA"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{marca, }\StringTok{"\^{}STATE$"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"STATE STREET"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{marca, }\StringTok{"\^{}COLD$"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"COLD SPRING"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{marca, }\StringTok{"\^{}COLT$"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"COLT 45"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{marca, }\StringTok{"\^{}ELK$"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"ELK MOUNTAIN"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{marca, }\StringTok{"\^{}HACKER$"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"HACKER PSCHORR"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{marca, }\StringTok{"\^{}HARD$"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"HARD CORE"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{marca, }\StringTok{"\^{}LITTLE$"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"LITTLE KINGS"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{marca, }\StringTok{"\^{}MCEWANS$"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"MCEWANS SCOTCH"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{marca, }\StringTok{"\^{}OS$"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"OS CLASSIC"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{marca, }\StringTok{"\^{}PILSNER$"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"PILSNER URQUELL"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{marca, }\StringTok{"\^{}WHEAT$"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"WHEAT HOOK"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{marca, }\StringTok{"\^{}ICE$"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"ICE DRAFT LIGHT"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{marca, }\StringTok{"\^{}O$"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"ROYAL GUARD"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{marca, }\StringTok{"\^{}JOHN$"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"JOHN COURAGE"}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{marca[}\FunctionTok{str\_detect}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{marca, }\StringTok{"\^{}JW$"}\NormalTok{)]}\OtherTok{\textless{}{-}}\StringTok{"JW DUNDEE\textquotesingle{}S"}
+
+\CommentTok{\# 5. Marcas de vinos y sidra}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{num }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{787}\NormalTok{) }
+\CommentTok{\#se crea esta variable para identificar las observaciones de las marcas que se van a eliminar}
+
+\NormalTok{beer }\OtherTok{\textless{}{-}}\NormalTok{ beer[}\SpecialCharTok{{-}}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{22}\NormalTok{, }\DecValTok{23}\NormalTok{, }\DecValTok{74}\NormalTok{, }\DecValTok{122}\NormalTok{, }\DecValTok{123}\NormalTok{, }\DecValTok{124}\NormalTok{, }\DecValTok{125}\NormalTok{, }\DecValTok{250}\NormalTok{, }\DecValTok{319}\NormalTok{, }\DecValTok{383}\NormalTok{, }\DecValTok{384}\NormalTok{, }\DecValTok{385}\NormalTok{, }\DecValTok{386}\NormalTok{,}
+                \DecValTok{476}\NormalTok{, }\DecValTok{477}\NormalTok{, }\DecValTok{557}\NormalTok{, }\DecValTok{558}\NormalTok{, }\DecValTok{604}\NormalTok{, }\DecValTok{605}\NormalTok{, }\DecValTok{606}\NormalTok{, }\DecValTok{626}\NormalTok{, }\DecValTok{627}\NormalTok{, }\DecValTok{628}\NormalTok{, }\DecValTok{629}\NormalTok{, }\DecValTok{630}\NormalTok{, }\DecValTok{631}\NormalTok{, }
+                \DecValTok{678}\NormalTok{, }\DecValTok{679}\NormalTok{, }\DecValTok{703}\NormalTok{, }\DecValTok{704}\NormalTok{, }\DecValTok{705}\NormalTok{, }\DecValTok{706}\NormalTok{, }\DecValTok{750}\NormalTok{), ] }
+
+\CommentTok{\# Identificando cuántas marcas de cervezas quedan}
+\NormalTok{brands }\OtherTok{\textless{}{-}} \FunctionTok{sort}\NormalTok{(}\FunctionTok{table}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{marca), }\AttributeTok{decreasing =} \ConstantTok{TRUE}\NormalTok{)}
+\NormalTok{brands}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{b.-reporte-estaduxedsticas-descriptivas-del-valor-de-las-ventas-el-nuxfamero-de-unidades-vendidas-y-el-precio-promedio-por-marca-en-una-tabla.-comente-lo-que-encuentra.}{%
+\subsubsection{b. Reporte estadísticas descriptivas del valor de las
+ventas, el número de unidades vendidas y el precio promedio por marca en
+una tabla. Comente lo que
+encuentra.}\label{b.-reporte-estaduxedsticas-descriptivas-del-valor-de-las-ventas-el-nuxfamero-de-unidades-vendidas-y-el-precio-promedio-por-marca-en-una-tabla.-comente-lo-que-encuentra.}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{tab1 }\OtherTok{\textless{}{-}}\NormalTok{beer }\SpecialCharTok{\%\textgreater{}\%}    \FunctionTok{group\_by}\NormalTok{(marca) }\SpecialCharTok{\%\textgreater{}\%}    \FunctionTok{summarise}\NormalTok{(}\FunctionTok{mean}\NormalTok{(sales),             }\FunctionTok{median}\NormalTok{(sales),             }\FunctionTok{sd}\NormalTok{(sales))}
+\NormalTok{tab2 }\OtherTok{\textless{}{-}}\NormalTok{beer }\SpecialCharTok{\%\textgreater{}\%}    \FunctionTok{group\_by}\NormalTok{(marca) }\SpecialCharTok{\%\textgreater{}\%}    \FunctionTok{summarise}\NormalTok{(}\FunctionTok{mean}\NormalTok{(price),             }\FunctionTok{median}\NormalTok{(price),             }\FunctionTok{sd}\NormalTok{(price))}
+\NormalTok{tab3 }\OtherTok{\textless{}{-}}\NormalTok{ beer }\SpecialCharTok{\%\textgreater{}\%}    \FunctionTok{group\_by}\NormalTok{(marca) }\SpecialCharTok{\%\textgreater{}\%}    \FunctionTok{summarise}\NormalTok{(}\FunctionTok{mean}\NormalTok{(q),             }\FunctionTok{median}\NormalTok{(q),             }\FunctionTok{sd}\NormalTok{(q))}
+
+\NormalTok{temporal12 }\OtherTok{=} \FunctionTok{merge}\NormalTok{(}\AttributeTok{by=}\StringTok{"marca"}\NormalTok{, tab1,tab2)}
+\NormalTok{Tabla1.b }\OtherTok{=} \FunctionTok{merge}\NormalTok{ (}\AttributeTok{by=}\StringTok{"marca"}\NormalTok{, temporal12,tab3 )}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{c.-haga-una-buxfasqueda-sobre-las-marcas-incluidas-en-la-lista-y-construya-las-siguientes-variables-dummy-1-importada-variable-igual-a-1-si-la-cerveza-es-originaria-de-un-pauxeds-distinto-a-los-estados-unidos-y-cero-en-otro-caso-y-2-artesanal-variable-igual-a-1-si-la-cerveza-es-producida-artesanalmente-y-cero-en-otro-caso.-reporte-estaduxedsticas-descriptivas-por-caracteruxedstica-en-una-tabla.}{%
+\subsubsection{c.~Haga una búsqueda sobre las marcas incluidas en la
+lista y construya las siguientes variables dummy: 1) ``importada'':
+variable igual a 1 si la cerveza es originaria de un país distinto a los
+Estados Unidos y cero en otro caso; y 2) ``artesanal'': variable igual a
+1 si la cerveza es producida artesanalmente y cero en otro caso. Reporte
+estadísticas descriptivas, por característica, en una
+tabla.}\label{c.-haga-una-buxfasqueda-sobre-las-marcas-incluidas-en-la-lista-y-construya-las-siguientes-variables-dummy-1-importada-variable-igual-a-1-si-la-cerveza-es-originaria-de-un-pauxeds-distinto-a-los-estados-unidos-y-cero-en-otro-caso-y-2-artesanal-variable-igual-a-1-si-la-cerveza-es-producida-artesanalmente-y-cero-en-otro-caso.-reporte-estaduxedsticas-descriptivas-por-caracteruxedstica-en-una-tabla.}}
+
+En primer lugar, con respecto a la variable \emph{importada}, es fácil
+distinguir si una cerveza es nacional o importada cuando proviene de una
+empresa pequeña o mediana con una localización definida. Sin embargo, la
+industria de la cerveza ha crecido ampliamente durante las últimas
+décadas, y para grandes multinaciones tal vez no es claro distinguir
+esta característica. El aumento de la demanda a nivel mundial ha
+desencadenado en una serie de decisiones logísticas por parte de las
+multinacionales encaminadas a reducir costos a través de la producción
+local, razón por la cual una misma marca puede tener fabricas en muchos
+países. Por ejemplo, la marca de cerveza mexicana Corona decidió en el
+2019 expandir su producción por fuera de su país estableciendoce en
+otros lugares como China; Corona está aumentando la disponibilidad en
+otros mercados y al mismo tiempo está reduciendo sus costos.
+
+Ahora bien, al analizar un país con una demanda tan significativa como
+lo es Estados Unidos, resulta natural pensar que muchas marcas
+extranjeras prefieran elaborar su producción destinada al público
+norteamericano en Estados Unidos. Para estos casos se decidió que se
+tomará una marca como importada siempre y cuando su casa matriz se
+encuentre fuera de Estados Unidos, incluso si la cerveza para este país
+es fabricada ahí mismo. Por ejemplo, la marca de cerveza St.~Pauli Girl
+es de origen alemán y su casa matriz se encuentra en la ciudad de
+Bremen, Alemania. Aun cuando esta cerveza en Estados Unidos es fabricada
+en la ciudad de San Luis, en Misuri, se tomó como importada. Además,
+resulta lógico definir esta variable así puesto que la estrategia de
+marketing de muchas de estas empresas con origen extranjero que tienen
+sedes en EE. UU. consiste en resaltar su origen.
+
+En segundo lugar, el criterio para clasificar una cerveza como artesanal
+o de producción masiva está mucho menos claro. La Asociación americana
+de cerveceros define a las cervecerías artesanales como aquellas que
+cumplen con 3 características: son pequeñas, independientes y
+tradicionales. El límite para el tamaño de una cervecería está
+comunmente definido por el número anual de barriles producidos o la
+participación en el mercado nacional (6 millones de barriles o 3\% de la
+producción nacional). Por su parte, la independencia hace referencia al
+porcentaje máximo de la empresa de la que puede ser dueño un actor que
+no pertenezca a la industria en cuestión (máximo 25\%), y la tradición
+se refiere a los ingredientes y recetas originales (Brewers Association,
+s.f.).
+
+Desde luego, la definición de cerveza artesanal no es única y existen
+más aproximaciones a este concepto que suponen más o menos restricciones
+sobre el producto. Además, no cabe duda que esta clasificación se hace
+más imprecisa con los grandes cambios y la expansión que ha sufrido la
+industria cervecera. Para ilustrar esto, marcas como Guinness y
+Löwenbräu conservan su receta original prácticamente sin variaciones
+desde su creación pero fueron incorporadas a grupos multinacionales más
+grandes, por lo que ya no es claro si pierden o no su calidad de
+artesanal. Además, también se suma la inexactitud de buscar esta
+información, la cual muchas veces es escasa, 20 años después del momento
+en el que fueron recolectados los datos, pues muchas cosas pudieron
+suceder en este periodo que cambiaran la percepción de estas marcas.
+
+En general, teniendo en cuenta que la construcción de esta variable está
+sesgada por problemas de definición y medición, se utilizó la
+información a nuestro alcance para identificar elementos en las cervezas
+entre los anteriormente mencionados y poder clasificar las 150 marcas
+que se encuentran en la base de datos.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}\#}
+\CommentTok{\#  Creando las variables *importada* y *artesanal*  \#}
+\CommentTok{\#{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}\#}
+
+\CommentTok{\# Variable *importada*}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{importada }\OtherTok{\textless{}{-}} \FunctionTok{ifelse}\NormalTok{( beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"BECK\textquotesingle{}S"} \SpecialCharTok{|}\NormalTok{ beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"MOLSON"} \SpecialCharTok{|}
+\NormalTok{                          beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"LOWENBRAU"} \SpecialCharTok{|}\NormalTok{ beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"TECATE"} \SpecialCharTok{|}
+\NormalTok{                          beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"FOSTER\textquotesingle{}S LAGER"} \SpecialCharTok{|}\NormalTok{ beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"LABATTS"} \SpecialCharTok{|}
+\NormalTok{                          beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"MURPHY\textquotesingle{}S IRISH"} \SpecialCharTok{|}\NormalTok{ beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"ST PAULI GIRL"} \SpecialCharTok{|}
+\NormalTok{                          beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"CARLING BLACK LABEL"} \SpecialCharTok{|}\NormalTok{ beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"CORONA"} \SpecialCharTok{|}
+\NormalTok{                          beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"DOS EQUIS"} \SpecialCharTok{|}\NormalTok{ beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"GUINNESS STOUT"} \SpecialCharTok{|} 
+\NormalTok{                          beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"HEINEKEN"} \SpecialCharTok{|}\NormalTok{ beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"WARSTEINER"} \SpecialCharTok{|} 
+\NormalTok{                          beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"AMSTEL"} \SpecialCharTok{|}\NormalTok{ beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"MOOSEHEAD"} \SpecialCharTok{|} 
+\NormalTok{                          beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"BASS"} \SpecialCharTok{|}\NormalTok{ beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"CARTA BLANCA"} \SpecialCharTok{|} 
+\NormalTok{                          beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"HACKER PSCHORR"} \SpecialCharTok{|}\NormalTok{ beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"KIRIN"} \SpecialCharTok{|} 
+\NormalTok{                          beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"MODELO"} \SpecialCharTok{|}\NormalTok{ beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"MORETTI"} \SpecialCharTok{|} 
+\NormalTok{                          beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"SAMUEL SMITH"} \SpecialCharTok{|}\NormalTok{ beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"SAPPORO"} \SpecialCharTok{|} 
+\NormalTok{                          beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"SPATEN"} \SpecialCharTok{|}\NormalTok{ beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"ASAHI"} \SpecialCharTok{|} 
+\NormalTok{                          beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"CLAUSTHALER"} \SpecialCharTok{|}\NormalTok{ beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"ELEPHANT"} \SpecialCharTok{|} 
+\NormalTok{                          beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"GROLSCH"} \SpecialCharTok{|}\NormalTok{ beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"HARP"} \SpecialCharTok{|}   
+\NormalTok{                          beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"MCEWANS SCOTCH"} \SpecialCharTok{|}\NormalTok{ beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"PILSNER URQUELL"} \SpecialCharTok{|}
+\NormalTok{                          beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"STEINLAGERS"} \SpecialCharTok{|}\NormalTok{ beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"TENNENTS"} \SpecialCharTok{|}  
+\NormalTok{                          beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"TOSELLI"} \SpecialCharTok{|}\NormalTok{ beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"BOHEMIA"} \SpecialCharTok{|}  
+\NormalTok{                          beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"BUCKLER"} \SpecialCharTok{|}\NormalTok{ beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"CARLSBERG"} \SpecialCharTok{|}  
+\NormalTok{                          beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"CASTLEMAINE"} \SpecialCharTok{|}\NormalTok{ beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"COOPERS"} \SpecialCharTok{|}  
+\NormalTok{                          beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"COUNTRY"} \SpecialCharTok{|}\NormalTok{ beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"DOM"} \SpecialCharTok{|}  
+\NormalTok{                          beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"DORTMUNDER"} \SpecialCharTok{|}\NormalTok{ beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"DUVEL"} \SpecialCharTok{|}  
+\NormalTok{                          beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"FRANZISKANER"} \SpecialCharTok{|}\NormalTok{ beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"FULLERS"} \SpecialCharTok{|}  
+\NormalTok{                          beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"HAACK{-}BECK"} \SpecialCharTok{|}\NormalTok{ beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"JOHN COURAGE"} \SpecialCharTok{|}  
+\NormalTok{                          beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"LEZAJSK"} \SpecialCharTok{|}\NormalTok{ beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"MACKESON"} \SpecialCharTok{|}  
+\NormalTok{                          beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"MOUSSY"} \SpecialCharTok{|}\NormalTok{ beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"NEWCASTLE"} \SpecialCharTok{|}  
+\NormalTok{                          beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"O.B."} \SpecialCharTok{|}\NormalTok{ beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"OKOCIM"} \SpecialCharTok{|}    
+\NormalTok{                          beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"PACIFICO"} \SpecialCharTok{|}\NormalTok{ beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"PERONI"} \SpecialCharTok{|}    
+\NormalTok{                          beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"RED STRIPE"} \SpecialCharTok{|}\NormalTok{ beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"SUNTORY"} \SpecialCharTok{|}    
+\NormalTok{                          beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"TSINGTAO"} \SpecialCharTok{|}\NormalTok{ beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"WHITBREAD"} \SpecialCharTok{|}      
+\NormalTok{                          beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"YOUNGS"} \SpecialCharTok{|}\NormalTok{ beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"ZYWIEC"} \SpecialCharTok{|}        
+\NormalTok{                          beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"ROYAL GUARD"}\NormalTok{ , }\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{)}
+           
+\CommentTok{\# Variable *artesanal*}
+\NormalTok{beer}\SpecialCharTok{$}\NormalTok{artesanal }\OtherTok{\textless{}{-}} \FunctionTok{ifelse}\NormalTok{(beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"SAMUEL ADAMS"} \SpecialCharTok{|}\NormalTok{ beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"STROH\textquotesingle{}S"} \SpecialCharTok{|}
+\NormalTok{                         beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"AUGSBURGER"} \SpecialCharTok{|}\NormalTok{ beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"PETE\textquotesingle{}S WICKED"} \SpecialCharTok{|}
+\NormalTok{                         beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"LEINENKUGEL"} \SpecialCharTok{|}\NormalTok{ beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"GOOSE ISLAND"} \SpecialCharTok{|}
+\NormalTok{                         beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"LOWENBRAU"} \SpecialCharTok{|}\NormalTok{ beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"OREGON"} \SpecialCharTok{|}
+\NormalTok{                         beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"BLUE MOON"} \SpecialCharTok{|}\NormalTok{ beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"KILLIAN\textquotesingle{}S"} \SpecialCharTok{|}
+\NormalTok{                         beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"ROGUE"} \SpecialCharTok{|}\NormalTok{ beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"BERGHOFF"} \SpecialCharTok{|}
+\NormalTok{                         beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"GUINNESS STOUT"} \SpecialCharTok{|}\NormalTok{ beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"SHIPYARD"} \SpecialCharTok{|}
+\NormalTok{                         beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"NEW AMSTERDAM"} \SpecialCharTok{|}\NormalTok{ beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"CELIS"} \SpecialCharTok{|}
+\NormalTok{                         beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"PYRAMID"} \SpecialCharTok{|}\NormalTok{ beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"ROLLING ROCK"} \SpecialCharTok{|}
+\NormalTok{                         beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"ANCHOR"} \SpecialCharTok{|}\NormalTok{ beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"BADERBRAU"} \SpecialCharTok{|}
+\NormalTok{                         beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"BLACK DOG"} \SpecialCharTok{|}\NormalTok{ beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"BOULDER"} \SpecialCharTok{|}
+\NormalTok{                         beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"DEVIL"} \SpecialCharTok{|}\NormalTok{ beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"DUSSELDORFER"} \SpecialCharTok{|}
+\NormalTok{                         beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"HACKER PSCHORR"} \SpecialCharTok{|}\NormalTok{ beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"NAKED ASPEN"} \SpecialCharTok{|}   
+\NormalTok{                         beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"POINT"} \SpecialCharTok{|}\NormalTok{ beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"SAMUEL SMITH"} \SpecialCharTok{|}  
+\NormalTok{                         beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"SIERRA NEVADA"} \SpecialCharTok{|}\NormalTok{ beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"STATE STREET"} \SpecialCharTok{|}  
+\NormalTok{                         beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"COLD SPRING"} \SpecialCharTok{|}\NormalTok{ beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"ELK MOUNTAIN"} \SpecialCharTok{|}  
+\NormalTok{                         beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"LEGACY"} \SpecialCharTok{|}\NormalTok{ beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"RED HOOK"} \SpecialCharTok{|}  
+\NormalTok{                         beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"SUMMIT"} \SpecialCharTok{|}\NormalTok{ beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"TOSELLI"} \SpecialCharTok{|}  
+\NormalTok{                         beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"COOPERS"} \SpecialCharTok{|}\NormalTok{ beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"DOM"} \SpecialCharTok{|}  
+\NormalTok{                         beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"JW DUNDEE\textquotesingle{}S"} \SpecialCharTok{|}\NormalTok{ beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"RAZOR\textquotesingle{}S"} \SpecialCharTok{|}  
+\NormalTok{                         beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"RED RIVER"} \SpecialCharTok{|}\NormalTok{ beer}\SpecialCharTok{$}\NormalTok{marca }\SpecialCharTok{==} \StringTok{"WATNEY\textquotesingle{}S"}\NormalTok{ , }\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{)}
+
+\CommentTok{\# Exportando la base de datos}
+\NormalTok{beer2 }\OtherTok{\textless{}{-}} \FunctionTok{subset}\NormalTok{(beer, }\AttributeTok{select =} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{8}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{11}\NormalTok{))}
+\FunctionTok{write.csv}\NormalTok{(beer2 , }\AttributeTok{file =} \StringTok{"beer2.csv"}\NormalTok{, }\AttributeTok{row.names =} \ConstantTok{FALSE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{e.-ejecute-la-misma-regresiuxf3n-del-punto-anterior-utilizando-el-comando-correspondiente-de-r.-reporte-los-estimados-en-una-tabla-en-la-que-incluya-los-resultados-del-literal-anterior-interprete-los-coeficientes-y-compare.-hay-alguna-diferencia-entre-el-procedimiento-manual-y-el-automuxe1tico}{%
+\subsubsection{e. Ejecute la misma regresión del punto anterior
+utilizando el comando correspondiente de R. Reporte los estimados en una
+tabla en la que incluya los resultados del literal anterior, interprete
+los coeficientes y compare. ¿Hay alguna diferencia entre el
+procedimiento manual y el
+automático?}\label{e.-ejecute-la-misma-regresiuxf3n-del-punto-anterior-utilizando-el-comando-correspondiente-de-r.-reporte-los-estimados-en-una-tabla-en-la-que-incluya-los-resultados-del-literal-anterior-interprete-los-coeficientes-y-compare.-hay-alguna-diferencia-entre-el-procedimiento-manual-y-el-automuxe1tico}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Procedimiento automático}
+\NormalTok{reg\_auto }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(q }\SpecialCharTok{\textasciitilde{}}\NormalTok{ price }\SpecialCharTok{+}\NormalTok{ importada }\SpecialCharTok{+}\NormalTok{ artesanal , }\AttributeTok{data =}\NormalTok{ beer2)}
+\FunctionTok{summary}\NormalTok{(reg\_auto)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{table}[!ht] \centering 
+  \caption{Resultados regresión MCO} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}}lcc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{2}{c}{\textit{Variable dependiente:}} \\ 
+\cline{2-3} 
+\\[-1.8ex] & \multicolumn{2}{c}{q} \\ 
+\\[-1.8ex] & (1) & (2)\\ 
+\hline \\[-1.8ex] 
+ price & $-$701,311.40$^{***}$ & $-$701,311.40$^{***}$ \\ 
+  & (141,464.00) & (141,464.00) \\ 
+  & & \\ 
+ importada & 72,514.27 & 72,514.27 \\ 
+  & (105,876.90) & (105,876.90) \\ 
+  & & \\ 
+ artesanal & 86,144.85 & 86,144.85 \\ 
+  & (91,731.34) & (91,731.34) \\ 
+  & & \\ 
+ Constante & 730,440.50$^{***}$ & 730,440.50$^{***}$ \\ 
+  & (97,565.98) & (97,565.98) \\ 
+  & & \\ 
+\hline \\[-1.8ex] 
+Observaciones & 753 & 753 \\ 
+R$^{2}$ & 0.04 & 0.04 \\ 
+R$^{2}$ Ajustado & 0.04 & 0.04 \\ 
+Residual Std. Error (df = 749) & 993,428.80 & 993,428.80 \\ 
+Estadístico F (df = 3; 749) & 10.77$^{***}$ & 10.77$^{***}$ \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Nota:}  & \multicolumn{2}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table}
+
+\hypertarget{h.-con-base-en-la-especificaciuxf3n-del-literal-d-haga-una-particiuxf3n-de-la-matriz-de-variables-regresoras-x-x_1x_2-donde-la-matriz-x_1-estuxe9-compuesta-por-la-variable-price-y-la-matriz-x_2-estuxe9-compuesta-por-las-demuxe1s-variables-regresoras.-muestre-que-en-este-caso-el-efecto-parcial-de-la-variable-price-sobre-eqx_1x_2-se-puede-recuperar-siguiendo-el-teorema-de-frisch-waugh.-describa-esquemuxe1ticamente-los-pasos-que-usted-sigue-al-aplicar-el-teorema-y-explique-la-intuiciuxf3n-asociada-a-cada-uno-de-dichos-pasos.}{%
+\subsubsection{\texorpdfstring{h. Con base en la especificación del
+literal (d), haga una partición de la matriz de variables regresoras
+\(X = [X_{1}X_{2}]\) donde la matriz \(X_{1}\) esté compuesta por la
+variable price y la matriz X\_\{2\} esté compuesta por las demás
+variables regresoras. Muestre que, en este caso, el efecto parcial de la
+variable price sobre \(E[q|X_{1},X_{2}]\) se puede recuperar siguiendo
+el Teorema de Frisch-Waugh. Describa esquemáticamente los pasos que
+usted sigue al aplicar el Teorema y explique la intuición asociada a
+cada uno de dichos
+pasos.}{h. Con base en la especificación del literal (d), haga una partición de la matriz de variables regresoras X = {[}X\_\{1\}X\_\{2\}{]} donde la matriz X\_\{1\} esté compuesta por la variable price y la matriz X\_\{2\} esté compuesta por las demás variables regresoras. Muestre que, en este caso, el efecto parcial de la variable price sobre E{[}q\textbar X\_\{1\},X\_\{2\}{]} se puede recuperar siguiendo el Teorema de Frisch-Waugh. Describa esquemáticamente los pasos que usted sigue al aplicar el Teorema y explique la intuición asociada a cada uno de dichos pasos.}}\label{h.-con-base-en-la-especificaciuxf3n-del-literal-d-haga-una-particiuxf3n-de-la-matriz-de-variables-regresoras-x-x_1x_2-donde-la-matriz-x_1-estuxe9-compuesta-por-la-variable-price-y-la-matriz-x_2-estuxe9-compuesta-por-las-demuxe1s-variables-regresoras.-muestre-que-en-este-caso-el-efecto-parcial-de-la-variable-price-sobre-eqx_1x_2-se-puede-recuperar-siguiendo-el-teorema-de-frisch-waugh.-describa-esquemuxe1ticamente-los-pasos-que-usted-sigue-al-aplicar-el-teorema-y-explique-la-intuiciuxf3n-asociada-a-cada-uno-de-dichos-pasos.}}
+
+Teniendo en cuenta la partición del enunciado, nuestro modelo se puede
+reescribir como:
+
+\[
+{q}= X_{1}\beta_{1}+X_{2}\beta_{2}+\varepsilon 
+\] donde \(X_{1}\) es una matriz de dimensión \(n\times1\) que contine
+únicamente la variable \emph{price} y \(X_{2}\) es una matriz de
+dimensión \(n\times3\) que está compuesta por una columna de unos (de
+tal forma que el modelo tenga una constante) y las variables
+\emph{importada} y \emph{artesanal}.
+
+En este caso, lo que se busca a través del Teorema de Frisch-Waugh es
+recuperar el efecto parcial de la variable \emph{price} a través de 3
+pasos que se enlistan a continuación:
+
+\begin{itemize}
+\item
+  Paso 1: Regresar a \(q\) sobre \(X_{2}\). La regresión sería \[
+  q=X_{2}\gamma+\epsilon
+  \] y los residuales de esta regresión se guardan como \(e_{2}\). En
+  este paso se está calculando qué parte de \(q\) no es explicada por
+  \(X_{2}\). En otras palabras, se está limpiando a \(q\) del efecto de
+  \(X_{2}\).
+\item
+  Paso 2: Regresar a \(X_{1}\) sobre \(X_{2}\). La regresión sería \[
+  X_{1}=X_{2}\omega+\epsilon
+  \] y los residuales de está regresión se guardan como \(e_{21}\).
+  Ahora, se está calculando qué parte de \(X_{1}\) no es explicada por
+  \(X_{2}\). Es decir, se está limpiando a \(X_{1}\) del efecto de
+  \(X_{2}\).
+\item
+  Paso 3: Regresar los residuales de la primera regresión (\(e_{2}\))
+  contra los residuales de la segunda (\(e_{21}\)). La regresión será \[
+  e_{2}=e_{21}\beta_{1}+\epsilon
+  \] Finalmente, se obtiene que \(\hat{\beta_{1}}\) es el mismo que si
+  se hubiera hecho la regresión de \(q\) contra \(X_{1}\) y \(X_{2}\),
+  específicamente, \(\hat{\beta_{1}} = -701311.4\).
+\end{itemize}
+
+Lo razón de lo anterior es que, al buscar estimar solamente el
+coeficiente de la variable \emph{price}, se debe primero remover el
+efecto de todas las demás variables regresoras, y de esta forma sí se
+podrá obtener el efecto parcial de esta variable sobre \(q\),
+Precisamente, los residuales que se incluyen en la regresión del tercer
+paso son los que obtuvieron el efecto limpio de \(X_{2}\).
+
+Para terminar de evidenciar esto, escribamos el estimador
+\(\hat{\beta_{1}}\) como \[
+\hat{\beta_{1}}= [e^{`}_{21} e_{21}]^{-1} e^{`}_{21} e_{2}
+\] Adicionalmente sabemos que \(e_{2}=M_{x2} q\) y
+\(e_{21}=M_{x2}X_{1}\), donde \(M_{x2}\) es la matriz creadora de
+residuales generada por las columnas de \(X_{2}\). Remplazando esto en
+el estimador de \(\beta_1\):
+
+\[
+\hat{\beta_{1}}=[(M_{x2}X_{1})^{`} M_{x2}X_{1} ]^{-1} (M_{x2}X_{1})^{`} M_{x2} q
+\] Distribuyendo la transpuesta: \[
+\hat{\beta_{1}}=[X_{1}^{`}M_{x2}^{`} M_{x2}X_{1} ]^{-1} X_{1}^{`}M_{x2}^{`} M_{x2} q
+\] Como \(M_{x2}\) es simétrica (\(X_{1}^{`}=X_{1}\)), entonces: \[
+\hat{\beta_{1}}=[X_{1}^{`}M_{x2} M_{x2}X_{1} ]^{-1} X_{1}^{`}M_{x2} M_{x2} q
+\] Como \(M_{x2}\) es idempotente (\(M_{x2}M_{x2}=M_{x2}\)), entonces:
+
+\[
+\hat{\beta_{1}}=[X_{1}^{`} M_{x2} X_{1}]^{-1}[X_{1}^{`} M_{x2} q]
+\] donde el primer término está indicando la parte de \(X_{1}\) que no
+explica \(X_2\) y el segundo término es la parte de \(q\) que no explica
+\(X_2\). Es decir, se está calculando \(\hat{\beta_{1}}\) con unas
+matrices a las que se les quitó el efecto de \(X_2\).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{beer2 }\OtherTok{\textless{}{-}} \FunctionTok{read\_csv}\NormalTok{(}\StringTok{"beer2.csv"}\NormalTok{)}
+
+\CommentTok{\#{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}\#}
+\CommentTok{\#  Aplicación Teorema de Frisch{-}Waugh  \#  }
+\CommentTok{\#{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}\#}
+
+\CommentTok{\# Paso 1}
+\NormalTok{p1 }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(q }\SpecialCharTok{\textasciitilde{}}\NormalTok{ importada }\SpecialCharTok{+}\NormalTok{ artesanal, }\AttributeTok{data =}\NormalTok{ beer2)}
+\NormalTok{beer2}\SpecialCharTok{$}\NormalTok{e2 }\OtherTok{\textless{}{-}} \FunctionTok{residuals}\NormalTok{(p1)}
+  \CommentTok{\# Se incluye el intercepto en la regresión porque X2 tiene un vector de unos}
+
+\CommentTok{\# Paso 2}
+\NormalTok{p2 }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(price }\SpecialCharTok{\textasciitilde{}}\NormalTok{ importada }\SpecialCharTok{+}\NormalTok{ artesanal, }\AttributeTok{data =}\NormalTok{ beer2)}
+\NormalTok{beer2}\SpecialCharTok{$}\NormalTok{e21 }\OtherTok{\textless{}{-}} \FunctionTok{residuals}\NormalTok{(p2) }
+  \CommentTok{\#Se incluye el intercepto en la regresión porque X2 tiene un vector de unos }
+
+\CommentTok{\# Paso 3}
+\NormalTok{p3 }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(e2 }\SpecialCharTok{\textasciitilde{}}\NormalTok{ e21 }\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{, }\AttributeTok{data =}\NormalTok{ beer2)}
+\FunctionTok{summary}\NormalTok{(p3)}
+  \CommentTok{\# No se incluye el intercepto porque X1 solo lo constituye la variable *price*}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{estimaciuxf3n-de-la-elasticidad-precio-de-la-demanda-de-cerveza}{%
+\subsection{Estimación de la elasticidad-precio de la demanda de
+cerveza}\label{estimaciuxf3n-de-la-elasticidad-precio-de-la-demanda-de-cerveza}}
+
+\hypertarget{a.-haga-un-gruxe1fico-de-dispersiuxf3n-entre-el-logaritmo-de-las-cantidades-vendidas-y-el-logaritmo-del-precio-e-incluya-una-luxednea-de-ajuste-lineal-escriba-el-modelo-de-regresiuxf3n-correspondiente-a-esta-luxednea-de-ajuste-y-comente.-quuxe9-tan-bueno-es-el-ajuste-de-este-modelo-cuxf3mo-se-puede-mejorar-el-ajuste}{%
+\subsubsection{a. Haga un gráfico de dispersión entre el logaritmo de
+las cantidades vendidas y el logaritmo del precio e incluya una línea de
+ajuste lineal, escriba el modelo de regresión correspondiente a esta
+línea de ajuste y comente. ¿Qué tan bueno es el ajuste de este modelo?
+¿Cómo se puede mejorar el
+ajuste?}\label{a.-haga-un-gruxe1fico-de-dispersiuxf3n-entre-el-logaritmo-de-las-cantidades-vendidas-y-el-logaritmo-del-precio-e-incluya-una-luxednea-de-ajuste-lineal-escriba-el-modelo-de-regresiuxf3n-correspondiente-a-esta-luxednea-de-ajuste-y-comente.-quuxe9-tan-bueno-es-el-ajuste-de-este-modelo-cuxf3mo-se-puede-mejorar-el-ajuste}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{beer2}\SpecialCharTok{$}\NormalTok{log\_price }\OtherTok{\textless{}{-}} \FunctionTok{log}\NormalTok{(beer2}\SpecialCharTok{$}\NormalTok{price)}
+\NormalTok{beer2}\SpecialCharTok{$}\NormalTok{log\_q }\OtherTok{\textless{}{-}} \FunctionTok{log}\NormalTok{(beer2}\SpecialCharTok{$}\NormalTok{q)}
+
+\NormalTok{reg\_1 }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{ (log\_q }\SpecialCharTok{\textasciitilde{}}\NormalTok{ log\_price, }\AttributeTok{data =}\NormalTok{ beer2)}
+\FunctionTok{summary}\NormalTok{(reg\_1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggplot2)}
+\FunctionTok{ggplot}\NormalTok{(beer2, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{log\_price, }\AttributeTok{y=}\NormalTok{log\_q)) }\SpecialCharTok{+}
+    \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{shape=}\DecValTok{20}\NormalTok{) }\SpecialCharTok{+}    \CommentTok{\# Use hollow circles}
+    \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{method=}\NormalTok{lm, }\AttributeTok{col =} \StringTok{"red"}\NormalTok{, }\AttributeTok{se=}\ConstantTok{FALSE}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{labs}\NormalTok{(}\AttributeTok{y =} \StringTok{"Log(q)"}\NormalTok{, }\AttributeTok{x=} \StringTok{"Log(price)"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{theme\_bw}\NormalTok{()   }\CommentTok{\# Don\textquotesingle{}t add shaded confidence region}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{b.-estime-la-elasticidad-precio-de-la-demanda-de-cerveza-mediante-una-regresiuxf3n-lineal-que-incluya-las-siguientes-variables-de-control-una-constante-y-las-caracteruxedsticas-de-la-cerveza-del-literal-c-del-punto-1.1.}{%
+\subsubsection{b. Estime la elasticidad precio de la demanda de cerveza
+mediante una regresión lineal que incluya las siguientes variables de
+control: una constante y las características de la cerveza del literal
+(c) del punto
+1.1.}\label{b.-estime-la-elasticidad-precio-de-la-demanda-de-cerveza-mediante-una-regresiuxf3n-lineal-que-incluya-las-siguientes-variables-de-control-una-constante-y-las-caracteruxedsticas-de-la-cerveza-del-literal-c-del-punto-1.1.}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{reg\_2 }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(log\_q }\SpecialCharTok{\textasciitilde{}}\NormalTok{ log\_price }\SpecialCharTok{+}\NormalTok{ importada }\SpecialCharTok{+}\NormalTok{ artesanal, }\AttributeTok{data =}\NormalTok{ beer2)}
+\FunctionTok{summary}\NormalTok{(reg\_2)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{c.-estime-de-nuevo-la-elasticidad-precio-de-la-demanda-de-cerveza-incluyendo-esta-vez-constantes-especuxedficas-por-marca.-reporte-los-resultados-de-esta-regresiuxf3n-junto-con-los-del-literal-anterior-compuxe1relos-y-comente-cuuxe1l-modelo-genera-la-mejor-estimaciuxf3n-de-la-elasticidad-y-por-quuxe9}{%
+\subsubsection{c.~Estime de nuevo la elasticidad precio de la demanda de
+cerveza incluyendo, esta vez, constantes específicas por marca. Reporte
+los resultados de esta regresión junto con los del literal anterior,
+compárelos y comente: ¿cuál modelo genera la mejor estimación de la
+elasticidad y por
+qué?}\label{c.-estime-de-nuevo-la-elasticidad-precio-de-la-demanda-de-cerveza-incluyendo-esta-vez-constantes-especuxedficas-por-marca.-reporte-los-resultados-de-esta-regresiuxf3n-junto-con-los-del-literal-anterior-compuxe1relos-y-comente-cuuxe1l-modelo-genera-la-mejor-estimaciuxf3n-de-la-elasticidad-y-por-quuxe9}}
+
+\begin{table}[!htbp] \centering 
+  \caption{} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}}lcc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{2}{c}{\textit{Variable dependiente:}} \\ 
+\cline{2-3} 
+\\[-1.8ex] & \multicolumn{2}{c}{Log(q)} \\ 
+\\[-1.8ex] & (1) & (2)\\ 
+\hline \\[-1.8ex] 
+ Log(price) & $-$2.506$^{***}$ & $-$1.925$^{***}$ \\ 
+  & (0.287) & (0.470) \\ 
+  & & \\ 
+ Importada & 0.089 & 1.499 \\ 
+  & (0.306) & (3.128) \\ 
+  & & \\ 
+ Artesanal & $-$0.416 & 0.284 \\ 
+  & (0.265) & (3.960) \\ 
+  & & \\ 
+ Constante & 8.222$^{***}$ & 7.677$^{***}$ \\ 
+  & (0.222) & (2.798) \\ 
+  & & \\ 
+\hline \\ [-1.8ex]
+Controles de marca &  No &  Sí  \\
+
+\hline \\
+[-1.8ex] 
+Observaciones & 753 & 753 \\ 
+R$^{2}$ & 0.137 & 0.401 \\ 
+R$^{2}$ Ajustado & 0.134 & 0.252 \\ 
+Residual Std. Error & 3.010 (gl = 749) & 2.797 (gl = 602) \\ 
+Estadístico F & 39.677$^{***}$ (gl = 3; 749) & 2.687$^{***}$ (gl = 150; 602) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Nota:}  & \multicolumn{2}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{reg\_3 }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(log\_q }\SpecialCharTok{\textasciitilde{}}\NormalTok{ log\_price }\SpecialCharTok{+}\NormalTok{ importada }\SpecialCharTok{+}\NormalTok{ artesanal }\SpecialCharTok{+}\NormalTok{ marca, }\AttributeTok{data =}\NormalTok{ beer2)}
+\FunctionTok{summary}\NormalTok{(reg\_3)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{simulaciones-de-monte-carlo}{%
+\section{2. Simulaciones de Monte
+Carlo}\label{simulaciones-de-monte-carlo}}
+
+\hypertarget{a.-simule-150-observaciones-de-una-variable-pseudoaleatoria-x_1-que-se-distribuye-uniforme-en-el-intervalo-0-10-y-150-observaciones-de-una-variable-pseudoaleatoria-v-que-se-distribuye-normal-con-media-2-y-varianza-9.}{%
+\subsubsection{\texorpdfstring{a. Simule 150 observaciones de una
+variable pseudoaleatoria \(x_{1}\) que se distribuye uniforme en el
+intervalo {[}0, 10{]} y 150 observaciones de una variable
+pseudoaleatoria \(v\) que se distribuye normal con media 2 y varianza
+9.}{a. Simule 150 observaciones de una variable pseudoaleatoria x\_\{1\} que se distribuye uniforme en el intervalo {[}0, 10{]} y 150 observaciones de una variable pseudoaleatoria v que se distribuye normal con media 2 y varianza 9.}}\label{a.-simule-150-observaciones-de-una-variable-pseudoaleatoria-x_1-que-se-distribuye-uniforme-en-el-intervalo-0-10-y-150-observaciones-de-una-variable-pseudoaleatoria-v-que-se-distribuye-normal-con-media-2-y-varianza-9.}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{remove}\NormalTok{(}\AttributeTok{list =} \FunctionTok{ls}\NormalTok{())}
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{123}\NormalTok{)}
+
+\NormalTok{n }\OtherTok{\textless{}{-}} \DecValTok{150}   \CommentTok{\# n: número de observaciones}
+
+\NormalTok{x1 }\OtherTok{\textless{}{-}} \FunctionTok{runif}\NormalTok{(n, }\DecValTok{0}\NormalTok{, }\DecValTok{10}\NormalTok{)}
+\NormalTok{v }\OtherTok{\textless{}{-}} \FunctionTok{rnorm}\NormalTok{(n, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{b.-cree-la-variable-x_2-x_1-v.}{%
+\subsubsection{\texorpdfstring{b. Cree la variable
+\(x_{2} = x_{1} + v\).}{b. Cree la variable x\_\{2\} = x\_\{1\} + v.}}\label{b.-cree-la-variable-x_2-x_1-v.}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x2 }\OtherTok{\textless{}{-}}\NormalTok{ x1 }\SpecialCharTok{+}\NormalTok{ v}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{c.-simule-150-observaciones-de-una-variable-aleatoria-varepsilon-que-viene-de-una-distribuciuxf3nn-normal-con-media-0-y-varianza-igual-a-25.-cree-la-variable-y-10-x_1-2x_2-varepsilon.}{%
+\subsubsection{\texorpdfstring{c.~Simule 150 observaciones de una
+variable aleatoria \(\varepsilon\) que viene de una distribuciónn normal
+con media 0 y varianza igual a 25. Cree la variable
+\(y = 10 − x_{1} + 2x_{2} + \varepsilon\).}{c.~Simule 150 observaciones de una variable aleatoria \textbackslash varepsilon que viene de una distribuciónn normal con media 0 y varianza igual a 25. Cree la variable y = 10 − x\_\{1\} + 2x\_\{2\} + \textbackslash varepsilon.}}\label{c.-simule-150-observaciones-de-una-variable-aleatoria-varepsilon-que-viene-de-una-distribuciuxf3nn-normal-con-media-0-y-varianza-igual-a-25.-cree-la-variable-y-10-x_1-2x_2-varepsilon.}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{epsilon }\OtherTok{\textless{}{-}} \FunctionTok{rnorm}\NormalTok{(n, }\DecValTok{0}\NormalTok{, }\DecValTok{5}\NormalTok{)}
+
+\NormalTok{y }\OtherTok{=} \DecValTok{10} \SpecialCharTok{{-}}\NormalTok{ x1 }\SpecialCharTok{+}\NormalTok{ (}\DecValTok{2}\SpecialCharTok{*}\NormalTok{x2) }\SpecialCharTok{+}\NormalTok{ epsilon}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{d.-lleve-a-cabo-una-regresiuxf3n-de-mco-de-y-sobre-x_1-y-x_2-incluyendo-el-intercepto.-quuxe9-tan-bueno-es-el-ajuste}{%
+\subsubsection{\texorpdfstring{d.~Lleve a cabo una regresión de MCO de
+\(y\) sobre \(x_{1}\) y \(x_{2}\), incluyendo el intercepto. ¿Qué tan
+bueno es el
+ajuste?}{d.~Lleve a cabo una regresión de MCO de y sobre x\_\{1\} y x\_\{2\}, incluyendo el intercepto. ¿Qué tan bueno es el ajuste?}}\label{d.-lleve-a-cabo-una-regresiuxf3n-de-mco-de-y-sobre-x_1-y-x_2-incluyendo-el-intercepto.-quuxe9-tan-bueno-es-el-ajuste}}
+
+\begin{table}[!htbp] \centering 
+  \caption{} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}}lc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{1}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-2} 
+\\[-1.8ex] & y \\ 
+\hline \\[-1.8ex] 
+ x1 & $-$0.667$^{***}$ \\ 
+  & (0.204) \\ 
+  x2 & 1.670$^{***}$ \\ 
+  & (0.143) \\ 
+  Constant & 11.035$^{***}$ \\ 
+  & (0.867) \\ 
+ \hline \\[-1.8ex] 
+Observations & 150 \\ 
+R$^{2}$ & 0.564 \\ 
+Adjusted R$^{2}$ & 0.558 \\ 
+Residual Std. Error & 4.991 (df = 147) \\ 
+F Statistic & 95.029$^{***}$ (df = 2; 147) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{1}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{reg }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(y }\SpecialCharTok{\textasciitilde{}}\NormalTok{ x1 }\SpecialCharTok{+}\NormalTok{ x2)}
+\FunctionTok{summary}\NormalTok{(reg)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{e.-repita-los-pasos-de-los-literales-c-y-d-de-este-experimento-1000-veces-manteniendo-x_1-y-x_2-constantes-y-calcule-las-medias-muestrales-de-los-coeficientes-estimados.-cuxf3mo-es-la-media-de-cada-coeficiente-con-respecto-a-su-respectivo-paruxe1metro-poblacional}{%
+\subsubsection{\texorpdfstring{e. Repita los pasos de los literales (c)
+y (d) de este experimento 1000 veces manteniendo \(x_{1}\) y \(x_{2}\)
+constantes y calcule las medias muestrales de los coeficientes
+estimados. ¿Cómo es la media de cada coeficiente con respecto a su
+respectivo parámetro
+poblacional?}{e. Repita los pasos de los literales (c) y (d) de este experimento 1000 veces manteniendo x\_\{1\} y x\_\{2\} constantes y calcule las medias muestrales de los coeficientes estimados. ¿Cómo es la media de cada coeficiente con respecto a su respectivo parámetro poblacional?}}\label{e.-repita-los-pasos-de-los-literales-c-y-d-de-este-experimento-1000-veces-manteniendo-x_1-y-x_2-constantes-y-calcule-las-medias-muestrales-de-los-coeficientes-estimados.-cuxf3mo-es-la-media-de-cada-coeficiente-con-respecto-a-su-respectivo-paruxe1metro-poblacional}}
+
+\begin{table}[!htbp] \centering 
+  \caption{Estadísticas desciptivas experimento 1000 repeticiones} 
+  \label{exp1000} 
+\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+Statistic & \multicolumn{1}{c}{Media} & \multicolumn{1}{c}{Desv. Est.} & \multicolumn{1}{c}{Mín.} &  \multicolumn{1}{c}{Máx.} \\ 
+\hline \\[-1.8ex] 
+$\hat{\beta_{0}}$ &  10.021 & 0.887 & 7.140  & 12.863 \\ 
+$\hat{\beta_{1}}$ &  $-$1.001 & 0.199 & $-$1.620  & $-$0.324 \\ 
+$\hat{\beta_{2}}$ &  1.999 & 0.140 & 1.525  & 2.426 \\ 
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{table}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{r }\OtherTok{\textless{}{-}} \DecValTok{1000}   \CommentTok{\# r: número de repeticiones}
+
+\CommentTok{\# Creamos vectores para guardar las estimaciones en cada repetición}
+\NormalTok{betax0 }\OtherTok{\textless{}{-}} \FunctionTok{rep}\NormalTok{(}\DecValTok{0}\NormalTok{, r)}
+\NormalTok{betax1 }\OtherTok{\textless{}{-}} \FunctionTok{rep}\NormalTok{(}\DecValTok{0}\NormalTok{, r) }
+\NormalTok{betax2 }\OtherTok{\textless{}{-}} \FunctionTok{rep}\NormalTok{(}\DecValTok{0}\NormalTok{, r)}
+
+\ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\NormalTok{r)\{}
+  
+\NormalTok{  epsilon\_i }\OtherTok{\textless{}{-}} \FunctionTok{rnorm}\NormalTok{(n, }\DecValTok{0}\NormalTok{, }\DecValTok{5}\NormalTok{)}
+\NormalTok{  y\_i }\OtherTok{=} \DecValTok{10} \SpecialCharTok{{-}}\NormalTok{ x1 }\SpecialCharTok{+}\NormalTok{ (}\DecValTok{2}\SpecialCharTok{*}\NormalTok{x2) }\SpecialCharTok{+}\NormalTok{ epsilon\_i}
+
+\NormalTok{  datos\_i }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{Y =}\NormalTok{ y\_i , }\AttributeTok{X1 =}\NormalTok{ x1, }\AttributeTok{X2 =}\NormalTok{ x2, }\AttributeTok{E =}\NormalTok{ epsilon\_i)}
+  
+\NormalTok{  reg\_i }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{( Y }\SpecialCharTok{\textasciitilde{}}\NormalTok{ X1 }\SpecialCharTok{+}\NormalTok{ X2, }\AttributeTok{data =}\NormalTok{ datos\_i)}
+  
+\NormalTok{  betax0[i] }\OtherTok{\textless{}{-}}\NormalTok{ reg\_i}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{1}\NormalTok{]}
+\NormalTok{  betax1[i] }\OtherTok{\textless{}{-}}\NormalTok{ reg\_i}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{2}\NormalTok{]}
+\NormalTok{  betax2[i] }\OtherTok{\textless{}{-}}\NormalTok{ reg\_i}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{3}\NormalTok{]}
+\NormalTok{\}}
+
+\NormalTok{estimaciones }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{BETA0 =}\NormalTok{ betax0, }\AttributeTok{BETA1 =}\NormalTok{ betax1, }\AttributeTok{BETA2 =}\NormalTok{ betax2)}
+
+\FunctionTok{mean}\NormalTok{(estimaciones}\SpecialCharTok{$}\NormalTok{BETA0)}
+\FunctionTok{mean}\NormalTok{(estimaciones}\SpecialCharTok{$}\NormalTok{BETA1)}
+\FunctionTok{mean}\NormalTok{(estimaciones}\SpecialCharTok{$}\NormalTok{BETA2)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{f.-repita-los-pasos-de-los-literales-a-b-y-e-para-n-450-1500-3000.-grafique-la-distribuciuxf3n-de-los-coeficientes-para-cada-tamauxf1o-de-muestra-incluyendo-n-150.-quuxe9-sucede-con-la-distribuciuxf3n-de-los-coeficientes-a-medida-que-el-tamauxf1o-de-muestra-crece-quuxe9-nos-sugiere-este-ejercicio-con-respecto-a-la-normalidad-asintuxf3tica-del-estimador-de-mco}{%
+\subsubsection{f.~Repita los pasos de los literales (a), (b) y (e) para
+n = 450, 1500, 3000. Grafique la distribución de los coeficientes para
+cada tamaño de muestra incluyendo n = 150. ¿Qué sucede con la
+distribución de los coeficientes a medida que el tamaño de muestra
+crece? ¿Qué nos sugiere este ejercicio con respecto a la normalidad
+asintótica del estimador de
+MCO?}\label{f.-repita-los-pasos-de-los-literales-a-b-y-e-para-n-450-1500-3000.-grafique-la-distribuciuxf3n-de-los-coeficientes-para-cada-tamauxf1o-de-muestra-incluyendo-n-150.-quuxe9-sucede-con-la-distribuciuxf3n-de-los-coeficientes-a-medida-que-el-tamauxf1o-de-muestra-crece-quuxe9-nos-sugiere-este-ejercicio-con-respecto-a-la-normalidad-asintuxf3tica-del-estimador-de-mco}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Creando lista para guardar los resultados para cada tamaño de muestra}
+\NormalTok{result }\OtherTok{\textless{}{-}} \FunctionTok{vector}\NormalTok{(}\StringTok{"list"}\NormalTok{,}\DecValTok{3}\NormalTok{)}
+\NormalTok{result}
+
+\ControlFlowTok{for}\NormalTok{ (j }\ControlFlowTok{in} \FunctionTok{c}\NormalTok{(}\DecValTok{450}\NormalTok{, }\DecValTok{1500}\NormalTok{, }\DecValTok{3000}\NormalTok{))\{}
+  
+\CommentTok{\# Hallando las realizaciones de *x1* y *v* y calculando *x2* para cada tamaño de muestra  }
+\NormalTok{  x1\_j }\OtherTok{\textless{}{-}} \FunctionTok{runif}\NormalTok{(j, }\DecValTok{0}\NormalTok{, }\DecValTok{10}\NormalTok{)}
+\NormalTok{  v\_j }\OtherTok{\textless{}{-}} \FunctionTok{rnorm}\NormalTok{(j, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{)}
+\NormalTok{  x2\_j }\OtherTok{\textless{}{-}}\NormalTok{ x1\_j }\SpecialCharTok{+}\NormalTok{ v\_j}
+  
+\CommentTok{\# Definiendo el número de repeticiones y creando vectores para guardar la}
+\NormalTok{  r }\OtherTok{\textless{}{-}} \DecValTok{1000}
+  
+\CommentTok{\# Creando vectores para guardar la información de cada repetición  }
+\NormalTok{  betax0\_j }\OtherTok{\textless{}{-}} \FunctionTok{rep}\NormalTok{(}\DecValTok{0}\NormalTok{, r)}
+\NormalTok{  betax1\_j }\OtherTok{\textless{}{-}} \FunctionTok{rep}\NormalTok{(}\DecValTok{0}\NormalTok{, r) }
+\NormalTok{  betax2\_j }\OtherTok{\textless{}{-}} \FunctionTok{rep}\NormalTok{(}\DecValTok{0}\NormalTok{, r)}
+
+\ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\NormalTok{r)\{}
+
+\CommentTok{\# En cada repetición se halla una realización de *epsilon* y se calcula *y*    }
+\NormalTok{  epsilon\_i }\OtherTok{\textless{}{-}} \FunctionTok{rnorm}\NormalTok{(j, }\DecValTok{0}\NormalTok{, }\DecValTok{5}\NormalTok{)}
+\NormalTok{  y\_i }\OtherTok{=} \DecValTok{10} \SpecialCharTok{{-}}\NormalTok{ x1\_j }\SpecialCharTok{+}\NormalTok{ (}\DecValTok{2}\SpecialCharTok{*}\NormalTok{x2\_j) }\SpecialCharTok{+}\NormalTok{ epsilon\_i}
+
+\CommentTok{\# Creando un data frame que contenga las realizaciones de cada repetición}
+\NormalTok{  datos\_i }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{Y =}\NormalTok{ y\_i , }\AttributeTok{X1 =}\NormalTok{ x1\_j, }\AttributeTok{X2 =}\NormalTok{ x2\_j, }\AttributeTok{E =}\NormalTok{ epsilon\_i)}
+
+\CommentTok{\# Realizando la regresión }
+\NormalTok{  reg\_i }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{( Y }\SpecialCharTok{\textasciitilde{}}\NormalTok{ X1 }\SpecialCharTok{+}\NormalTok{ X2, }\AttributeTok{data =}\NormalTok{ datos\_i)}
+  
+\CommentTok{\# Guardando las estimaciones de los coeficientes de la regresión de cada repetición  }
+\NormalTok{  betax0\_j[i] }\OtherTok{\textless{}{-}}\NormalTok{ reg\_i}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{1}\NormalTok{]}
+\NormalTok{  betax1\_j[i] }\OtherTok{\textless{}{-}}\NormalTok{ reg\_i}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{2}\NormalTok{]}
+\NormalTok{  betax2\_j[i] }\OtherTok{\textless{}{-}}\NormalTok{ reg\_i}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{3}\NormalTok{]}
+\NormalTok{\}}
+
+\CommentTok{\# Creando data frame que contenga las estimaciones para cada tamaño de muestra  }
+\NormalTok{  estimaciones\_j }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{BETA0 =}\NormalTok{ betax0\_j, }\AttributeTok{BETA1 =}\NormalTok{ betax1\_j, }\AttributeTok{BETA2 =}\NormalTok{ betax2\_j)}
+  
+\CommentTok{\# Guardando los resultados para cada tamaño de muestra}
+\NormalTok{  result[[j]] }\OtherTok{\textless{}{-}}\NormalTok{ estimaciones\_j}
+  
+\NormalTok{\}}
+\CommentTok{\# Compilando en una sola base las estimaciones de los coeficientes de todas las }
+\CommentTok{\# repeticiones y tamaños de muestra}
+
+\NormalTok{  Com }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(estimaciones, result[[}\DecValTok{450}\NormalTok{]], result[[}\DecValTok{1500}\NormalTok{]], result[[}\DecValTok{3000}\NormalTok{]])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{table}[!htbp] \centering 
+  \caption{} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}}lccccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+Statistic & \multicolumn{1}{c}{N} & \multicolumn{1}{c}{Mean} & \multicolumn{1}{c}{St. Dev.} & \multicolumn{1}{c}{Min} & \multicolumn{1}{c}{Pctl(25)} & \multicolumn{1}{c}{Pctl(75)} & \multicolumn{1}{c}{Max} \\ 
+\hline \\[-1.8ex] 
+BETA0 n=150 & 1,000 & 10.021 & 0.887 & 7.140 & 9.396 & 10.630 & 12.863 \\ 
+BETA1 n=150 & 1,000 & $-$1.001 & 0.199 & $-$1.620 & $-$1.137 & $-$0.870 & $-$0.324 \\ 
+BETA2 n=150& 1,000 & 1.999 & 0.140 & 1.525 & 1.907 & 2.091 & 2.426 \\ 
+BETA0.1  n=450& 1,000 & 9.998 & 0.506 & 8.607 & 9.666 & 10.352 & 11.861 \\ 
+BETA1.1 n=450& 1,000 & $-$0.992 & 0.110 & $-$1.345 & $-$1.066 & $-$0.917 & $-$0.641 \\ 
+BETA2.1 n=450& 1,000 & 1.995 & 0.079 & 1.782 & 1.943 & 2.046 & 2.248 \\ 
+BETA0.2 n=1500& 1,000 & 9.994 & 0.271 & 9.160 & 9.812 & 10.186 & 10.756 \\ 
+BETA1.2 n=1500& 1,000 & $-$1.000 & 0.059 & $-$1.198 & $-$1.039 & $-$0.959 & $-$0.787 \\ 
+BETA2.2 n=1500& 1,000 & 2.000 & 0.041 & 1.877 & 1.972 & 2.030 & 2.118 \\ 
+BETA0.3 n=3000& 1,000 & 10.003 & 0.190 & 9.395 & 9.878 & 10.133 & 10.644 \\ 
+BETA1.3 n=3000& 1,000 & $-$1.001 & 0.043 & $-$1.146 & $-$1.029 & $-$0.971 & $-$0.852 \\ 
+BETA2.3 n=3000& 1,000 & 2.000 & 0.029 & 1.909 & 1.980 & 2.020 & 2.082 \\ 
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{table}
+
+\includegraphics[width=0.55\textwidth,height=0.55\textheight]{beta0.png}
+\includegraphics[width=0.55\textwidth,height=0.55\textheight]{beta1.png}
+\includegraphics[width=0.55\textwidth,height=0.55\textheight]{beta2.png}
+
+\hypertarget{referencias}{%
+\section{Referencias}\label{referencias}}
+
+Craft Brewer Definition. (s.f.). Brewers Association. Recuperado el día
+9 marzo 2021 de
+\url{https://www.brewersassociation.org/statistics-and-data/craft-brewer-definition/}
+
+\end{document}

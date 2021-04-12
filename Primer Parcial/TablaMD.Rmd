@@ -1,0 +1,12 @@
+---
+title: "Table 1.b"
+author: "Giovany Astroz y Javier leal"
+date: "12/3/2021"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+A continuación se encuentra la tabla del punto 1.1.b
